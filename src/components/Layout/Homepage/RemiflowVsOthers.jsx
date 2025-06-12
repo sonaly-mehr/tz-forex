@@ -60,7 +60,7 @@ const RemiflowVsOthers = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.4 }}
-        className="font-darkerGrotesque font-semibold text-4xl lg:text-[70px] text-dark lg:-mt-1 pb-12 text-center"
+        className="font-darkerGrotesque font-semibold text-4xl lg:text-[70px] text-dark mt-1.5 pb-12 text-center"
       >
         Remiflow vs. Others
       </motion.h3>
