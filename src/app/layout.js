@@ -1,7 +1,7 @@
 import { Darker_Grotesque, Figtree, Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Shared/Navbar";
-import Footer from "@/components/Shared/Footer";
+import FooterWrapper from "@/components/Layout/Homepage/FooterWrapper";
 
 const darkerGrotesque = Darker_Grotesque({
   variable: "--font-darkerGrotesque",
@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar/>
         {children}
-        <Footer/>
+        <FooterWrapper/>
       </body>
     </html>
   );

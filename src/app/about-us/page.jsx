@@ -62,13 +62,13 @@ const page = () => {
           <p className="font-openSans font-normal text-white/80 text-base lg:text-[20px] leading-[150%] text-left md:text-center pt-5 lg:pt-3">
             We Know the Struggles of Sending Money Home—Because We've Been There
             Too
-            <p className="font-openSans font-normal text-white/80 text-base lg:text-[20px] leading-[150%] text-left md:text-center  mt-3.5 lg:mt-0 ">
+          </p>
+                      <p className="font-openSans font-normal text-white/80 text-base lg:text-[20px] leading-[150%] text-left md:text-center  mt-3.5 lg:mt-0 ">
               {" "}
               We started Remiflow with a simple goal: help immigrants send money
               home without getting ripped off by hidden fees and bad exchange
               rates
             </p>
-          </p>
         </div>
 
         <div className=" absolute bottom-32 md:bottom-28  lg:-bottom-[230px] w-full">
@@ -180,8 +180,8 @@ const page = () => {
               affordable, and accessible for the immigrant community.
             </p>
             <ul className="flex flex-col gap-7">
-              {moneyTransfer?.map((item) => (
-                <li className="flex gap-2.5 items-center bg-white rounded-lg p-3.5 shadow-[0px_12px_16px_0px_#0000000A] font-openSans font-semibold text-sm lg:text-lg text-[#1A1A1A]">
+              {moneyTransfer?.map((item, index) => (
+                <li key={index} className="flex gap-2.5 items-center bg-white rounded-lg p-3.5 shadow-[0px_12px_16px_0px_#0000000A] font-openSans font-semibold text-sm lg:text-lg text-[#1A1A1A]">
                   <FaCheckCircle className="text-[#5CB85C]  text-lg lg:text-[22px] flex-shrink-0" />{" "}
                   {item}
                 </li>

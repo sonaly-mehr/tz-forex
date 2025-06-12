@@ -1,3 +1,4 @@
+"use client";
 import Banks from "@/components/Layout/Homepage/Banks";
 import FAQ from "@/components/Layout/Homepage/FAQ";
 import GetStartedNow from "@/components/Layout/Homepage/GetStartedNow";
