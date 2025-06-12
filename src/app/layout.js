@@ -1,15 +1,31 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Darker_Grotesque, Figtree, Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Shared/Navbar";
+import Footer from "@/components/Shared/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const darkerGrotesque = Darker_Grotesque({
+  variable: "--font-darkerGrotesque",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const openSans = Open_Sans({
+  variable: "--font-openSans",
   subsets: ["latin"],
 });
+
+const figtree = Figtree({
+  variable: "--font-figtree",
+  subsets: ["latin"],
+});
+
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+});
+
+
+
 
 export const metadata = {
   title: "Create Next App",
@@ -20,9 +36,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${darkerGrotesque.variable} ${openSans.variable} ${figtree.variable} ${poppins.variable} antialiased`}
       >
+        <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
