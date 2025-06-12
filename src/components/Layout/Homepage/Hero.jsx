@@ -62,7 +62,7 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          <div className="flex flex-col gap-[22px] w-full max-w-[430px] lg:ml-auto mt-10 lg:mt-16">
+          <div className="flex flex-col gap-[22px] w-full max-w-[430px] lg:ml-auto mt-10 lg:mt-16 overflow-hidden">
             {rateInfo.map((item, index) => (
               <div
                 variants={fadeIn("up", "spring", index * 0.5, 1)}

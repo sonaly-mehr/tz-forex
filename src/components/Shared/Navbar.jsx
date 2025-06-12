@@ -116,14 +116,11 @@ text-base lg:text-xl xl:text-[22px]
             <div className="py-9 flex flex-col">
               <ul className="uppercase flex flex-col gap-6">
                 {navLinks?.map((link, index) => (
-                  <li key={index} onClick={() => setNav(false)}>
-                    <a
-                      href={link.path}
-                      className="text-base font-semibold text-white hover:text-white/90 transition cursor-pointer"
-                    >
+                  <Link href={link?.href} key={index} onClick={() => setNav(false)} className="text-base font-semibold text-white hover:text-white/90 transition cursor-pointer">
+                    
                       {link.lable}
-                    </a>
-                  </li>
+                    
+                  </Link>
                 ))}
               </ul>
             </div>

@@ -60,7 +60,7 @@ const SendMoney = () => {
 
         {/* send money */}
         <div
-          className="flex-1 w-full lg:min-h-[820px] rounded-[30px] bg-cover bg-center relative flex justify-center items-center"
+          className="lg:flex-1 w-full lg:min-h-[820px] rounded-[30px] bg-cover bg-center relative flex justify-center items-center"
           style={{ backgroundImage: `url(${sendMoney.src})` }}
         >
           {/* Calculator Widget */}
@@ -74,19 +74,15 @@ const SendMoney = () => {
   bg-[linear-gradient(180deg,rgba(255,255,255,0.8)_0%,rgba(255,255,255,0.64)_100%)] rounded-3xl p-3  lg:p-8 w-[92%] lg:w-[90%] mx-auto my-5 sm:my-7 border"
           >
             {/* Send Amount */}
-            <div className="relative h-full">
-              <div className="flex items-center justify-between bg-white h-full rounded-2xl p-4 shadow-[0px_10px_14px_-10px_#9999993D] border border-[#EAEAEA99]">
+            <div className="relative w-full">
+              <div className="flex items-center justify-between bg-white rounded-2xl p-4 shadow-[0px_10px_14px_-10px_#9999993D] border border-[#EAEAEA99]">
                 <div className="flex flex-col ">
                   <label className="text-[#6D6C6B80]/50 font-openSans font-normal text-sm  block">
                     You send:
                   </label>
-                  <input
-                    type="text"
-                    value="1000"
-                    readOnly
-                    // onChange={(e) => setSendAmount(e.target.value)}
-                    className="text-[28px] lg:text-[32px] font-matter-medium text-[#161616] bg-transparent outline-none"
-                  />
+                  <span className="text-[28px] lg:text-[32px] font-matter-medium text-[#161616] bg-transparent outline-none">
+                      1000
+                    </span>
                 </div>
 
                 <div className="flex items-center space-x-2">
