@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${darkerGrotesque.variable} ${openSans.variable} ${figtree.variable} ${poppins.variable} antialiased`}
+        className={`${darkerGrotesque.variable} ${openSans.variable} ${figtree.variable} ${poppins.variable} antialiased overflow-x-hidden`}
       >
         <Navbar/>
         {children}
