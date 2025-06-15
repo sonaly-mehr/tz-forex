@@ -40,13 +40,13 @@ const MoneySecured = () => {
         <div className="lg:w-[95%]">
           <motion.h4
             variants={navVariants}
-            className="font-darkerGrotesque font-bold text-4xl lg:text-[52px] text-dark leading-[128%]"
+            className="font-aeonik-pro text-[32px] leading-[130%] lg:text-[48px] text-dark lg:leading-[58px] tracking-[-1.5%]"
           >
             Safe & Regulated – Your Money is Secure
           </motion.h4>
           <motion.p
             variants={fadeIn("up", "tween", 0.2, 1)}
-            className="font-figtree font-normal mt-3 mb-6 text-dark/70 text-base lg:text-lg lg:w-[95%]"
+            className="font-matter-regular mt-3 mb-6 text-dark/70 text-base lg:text-lg lg:w-[95%]"
           >
             We follow strict security & compliance standards, so your funds are
             safe with us.
@@ -54,7 +54,7 @@ const MoneySecured = () => {
           <motion.div variants={fadeIn("up", "tween", 0.4, 1)}>
             <Button
               lable="Send Money to Any Bank"
-              className="py-4 rounded-[20px] text-[22px]"
+              className="py-5 px-6  lg:text-xl"
             />
           </motion.div>
 
@@ -68,14 +68,18 @@ const MoneySecured = () => {
                 className="bg-[#EBF1FF] border border-[#EBF1FF1A] rounded-xl p-3 lg:p-5 flex gap-5 items-center"
                 key={index}
               >
-                <div className={`${index !== 1 ? "w-[50px] lg:w-[40px]" : "w-[40px]"}  h-[40px] flex justify-center items-center bg-white p-2 rounded-full border border-[#EBF1FF1A]/10 shadow-[0px_10px_16px_-5px_#5C657829`}>
+                <div
+                  className={`${
+                    index !== 1 ? "w-[50px] lg:w-[40px]" : "w-[40px]"
+                  }  h-[40px] flex justify-center items-center bg-white p-2 rounded-full border border-[#F5F5F5] shadow-[0px_10px_16px_-5px_#5C657829]`}
+                >
                   <Image
                     src={item?.icon}
                     alt=""
                     className=" w-[20px] h-[20px] "
                   />
                 </div>
-                <h4 className="font-figtree text-[#0D0A08] font-normal text-base lg:text-xl">
+                <h4 className="font-matter-regular text-[#0D0A08] font-normal text-base lg:text-xl">
                   {item?.text}
                 </h4>
               </motion.div>
@@ -84,7 +88,7 @@ const MoneySecured = () => {
         </div>
       </div>
 
-      <div className="lg:flex-1">
+      <div className="lg:flex-1 mt-2 lg:mt-0">
         <Image src={SendMoney} alt="" className="w-full h-auto" />
       </div>
     </motion.div>

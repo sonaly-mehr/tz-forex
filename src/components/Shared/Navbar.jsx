@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { CgMenuRight } from "react-icons/cg";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { lable: "Home", href: "/" },
@@ -14,11 +15,14 @@ const navLinks = [
   { lable: "Blog", href: "/blog" },
 ];
 const Navbar = () => {
+  const pathname = usePathname();
+
   const [nav, setNav] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
 
+  
   return (
     <motion.header
       initial={{ opacity: 0, y: -50 }}
@@ -27,56 +31,68 @@ const Navbar = () => {
       transition={{ duration: 0.4 }}
       className="w-full  text-white bg-primary py-6"
     >
-      <nav className="flex justify-between items-center w-full lg:w-[88%] mx-auto px-4 lg:px-0 ">
-        <Link href="/">
-          <Image
-            src="/img/logo.svg"
-            alt=""
-            width={150}
-            height={46}
-            className="w-[120px] lg:w-[140px] xl:w-[150px] h-auto"
-          />
-        </Link>
-        <ul className="hidden lg:flex gap-5 xl:gap-10 items-center justify-center">
-          {navLinks?.map((link, index) => (
-            <motion.li
-              key={index}
-              className=" text-[17px] lg:text-xl xl:text-[22px] font-semibold font-darkerGrotesque  text-white hover:text-white/90 transition-colors duration-300"
-            >
-              <Link href={link.href}>{link.lable}</Link>
-            </motion.li>
-          ))}
-        </ul>
+      <div className="w-full lg:w-[90%] mx-auto px-4 lg:px-0">
+        <div className=" bg-white/10 backdrop-blur-[24px] py-3 lg:py-2.5 px-3  lg:px-4 rounded-2xl">
+          <nav className="flex justify-between items-center w-full ">
+            <Link href="/">
+              <Image
+                src="/img/logo.svg"
+                alt=""
+                width={150}
+                height={46}
+                className="w-[110px] lg:w-[140px] xl:w-[150px] h-auto"
+              />
+            </Link>
+            <ul className="hidden lg:flex gap-5 xl:gap-3 items-center justify-center">
+              {navLinks.map((link) => {
+                const isActive =
+  link.href === "/blog" ? pathname.startsWith("/blog") : pathname === link.href;
+                return (
+                  <motion.li
+                    key={link.href}
+                    className={[
+                      "py-3.5 px-6 rounded-lg text-sm lg:text-base font-matter-regular transition-colors duration-300",
+                      // always white text, slightly faded when not active
+                      isActive
+                        ? "bg-white/10 text-white"
+                        : "text-white/70 hover:text-white/90",
+                      // add the hover-background only when not active
+                      !isActive && "hover:bg-white/10",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")}
+                  >
+                    <Link href={link?.href}>{link?.lable}</Link>
+                  </motion.li>
+                );
+              })}
+            </ul>
 
-        <div className="hidden lg:flex items-center gap-3 lg:gap-4 xl:gap-6">
-          <Link
-            href="/login"
-            className="text-base lg:text-xl xl:text-[22px] font-semibold font-darkerGrotesque text-white hover:text-white/90 transition-colors duration-300"
-          >
-            Log in
-          </Link>
-          <button
-            href="/register"
-            className="
-text-base lg:text-xl xl:text-[22px]
-    font-semibold font-darkerGrotesque
-    text-primary bg-white
+            <div className="hidden lg:flex">
+              <button
+                href="/register"
+                className="
+text-sm lg:text-base
+    font-matter-medium
+    text-dark bg-white
      flex justify-center items-center
-    px-3 lg:px-6 rounded-full pt-1 lg:pt-2 pb-2 lg:pb-3
+    px-3 lg:px-6 rounded-lg pt-1 lg:pt-2.5 pb-2 lg:pb-3.5
     transform
     transition-transform duration-200 ease-in-out
     hover:scale-105
   "
-          >
-            Get Started Now
-          </button>
-        </div>
+              >
+                Get Started Now
+              </button>
+            </div>
 
-        {/* Hamburger Icon */}
-        <div onClick={handleNav} className="lg:hidden relative z-10">
-          <CgMenuRight className="cursor-pointer text-white text-3xl" />
+            {/* Hamburger Icon */}
+            <div onClick={handleNav} className="lg:hidden relative z-10">
+              <CgMenuRight className="cursor-pointer text-white text-[28px]" />
+            </div>
+          </nav>
         </div>
-      </nav>
+      </div>
 
       {/* Mobile Menu */}
       <div className="relative z-[100]">
@@ -116,10 +132,13 @@ text-base lg:text-xl xl:text-[22px]
             <div className="py-9 flex flex-col">
               <ul className="uppercase flex flex-col gap-6">
                 {navLinks?.map((link, index) => (
-                  <Link href={link?.href} key={index} onClick={() => setNav(false)} className="text-base font-semibold text-white hover:text-white/90 transition cursor-pointer">
-                    
-                      {link.lable}
-                    
+                  <Link
+                    href={link?.href}
+                    key={index}
+                    onClick={() => setNav(false)}
+                    className="text-base font-semibold text-white hover:text-white/90 transition cursor-pointer"
+                  >
+                    {link.lable}
                   </Link>
                 ))}
               </ul>
@@ -135,15 +154,14 @@ text-base lg:text-xl xl:text-[22px]
               <button
                 href="/register"
                 className="
-    text-lg
-    w-fit
-    font-semibold font-darkerGrotesque
-    text-primary bg-white
+text-sm lg:text-base
+    font-matter-medium
+    text-dark bg-white
      flex justify-center items-center
-    px-4 rounded-full pt-1 pb-2
+    px-3 lg:px-6 rounded-lg pt-2.5  pb-3.5
     transform
     transition-transform duration-200 ease-in-out
-    hover:scale-105
+    hover:scale-105 w-fit
   "
               >
                 Get Started Now

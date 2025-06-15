@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import remiFlow from "../../../public/img/icons/remiflow.svg";
+import tzforex from "../../../public/img/icons/tzforex.svg";
 import appStore from "../../../public/img/icons/app-store.svg";
 import googlePlay from "../../../public/img/icons/google-play.svg";
 import { motion, AnimatePresence } from "framer-motion";
@@ -54,7 +54,7 @@ const links = [
         path: "/",
       },
       {
-        lable: "Why Remiflow",
+        lable: "Why tz forex",
         path: "/",
       },
     ],
@@ -220,10 +220,10 @@ const Footer = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1, type: "spring", stiffness: 100 }}
             >
-              <Image src={remiFlow} alt="" className="w-[170px] h-auto mb-4" />
+              <Image src={tzforex} alt="" className="w-[170px] h-auto mb-4" />
               <p className="font-openSans font-normal text-sm text-white/60 md:w-[65%] leading-6">
                 Fast. Secure. Effortless. Now, sending money to India is easier
-                than ever with the Remiflow.
+                than ever with the tz forex.
               </p>
             </motion.div>
 
@@ -298,7 +298,7 @@ const Footer = () => {
                 </svg>
               </div>
               <p className="font-openSans font-normal text-white/60 text-xs lg:text-sm tracking-[-1%]">
-                © 2025 Remiflow. All Rights Reserved.
+                © 2025 tz forex. All Rights Reserved.
               </p>
             </motion.div>
 

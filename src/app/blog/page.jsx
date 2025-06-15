@@ -6,6 +6,7 @@ import Image from "next/image";
 import happyWomen from "../../../public/img/happy-woman.jpg";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Subscribe from "@/components/Layout/Homepage/Subscribe";
+import Link from "next/link";
 
 const featuredPosts = [
   {
@@ -136,9 +137,9 @@ const page = () => {
 
           <div className="flex flex-col justify-between flex-1">
             <div>
-              <h4 className="font-aeonik-pro text-[#1A1A1A] text-2xl lg:text-4xl lg:leading-[130%]">
+              <Link href="/blog/1" className="hover:underline transition-all duration-100 font-aeonik-pro text-[#1A1A1A] text-2xl lg:text-4xl lg:leading-[130%]">
                 5 Mistakes People Make When Sending Money Home
-              </h4>
+              </Link>
               <p className="font-gilroy-light text-[#323232] leading-[160%] text-base lg:text-lg mt-5 lg:mt-6 ">
                 orem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis
                 arcu enim urna adipiscing prae

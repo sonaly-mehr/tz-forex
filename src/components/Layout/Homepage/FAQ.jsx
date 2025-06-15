@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 
 const faq = [
   {
-    question: "How does RemiFlow offer better rates than banks and Remitly?",
+    question: "How does tz forex  offer better rates than banks and Remitly?",
     answer:
       "We operate with lower overheads and pass the savings on to you. Unlike traditional financial institutions, we don’t inflate exchange rates to profit off you.",
   },
@@ -25,7 +25,7 @@ const faq = [
       "We operate with lower overheads and pass the savings on to you. Unlike traditional financial institutions, we don’t inflate exchange rates to profit off you.",
   },
   {
-    question: "Is it safe to use Remiflow for sending money?",
+    question: "Is it safe to use tz forex  for sending money?",
     answer:
       "We operate with lower overheads and pass the savings on to you. Unlike traditional financial institutions, we don’t inflate exchange rates to profit off you.",
   },
@@ -35,7 +35,7 @@ const faq = [
       "We operate with lower overheads and pass the savings on to you. Unlike traditional financial institutions, we don’t inflate exchange rates to profit off you.",
   },
   {
-    question: "Is my money safe with RemiFlow?",
+    question: "Is my money safe with tz forex ?",
     answer:
       "We operate with lower overheads and pass the savings on to you. Unlike traditional financial institutions, we don’t inflate exchange rates to profit off you.",
   },
@@ -75,19 +75,20 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border border-[#E5EAF4] shadow-[0px_6px_10px_0px_#00000008] rounded-md px-5 lg:px-8 py-2 mb-4"
+                className="bg-[#F7F8FA] border border-[#EDEFF2]  rounded-xl px-5 lg:px-8 py-2.5 mb-5"
               >
                 <motion.div
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, amount: 0.25 }}
                   variants={fadeIn("up", "spring", index * 0.5, 1)}
-                  className=""
                 >
                   <AccordionTrigger className="font-matter-medium  text-dark text-base lg:text-xl tracking-[-1%] hover:no-underline">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="font-openSans font-normal text-sm lg:text-lg text-[#5A7184] leading-6 lg:leading-8">
+                  <AccordionContent className="font-matter-regular font-normal text-sm lg:text-base text-[#5A7184] leading-6 lg:leading-[26px]  overflow-hidden transition-all 
+    data-[state=closed]:animate-accordion-up
+    data-[state=open]:animate-accordion-down">
                     {item.answer}
                   </AccordionContent>
                 </motion.div>

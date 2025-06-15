@@ -8,6 +8,12 @@ import {
   navVariants,
   staggerContainer,
 } from "../../../../utils/Motion";
+import ButtonOutlined from "@/components/Shared/ButtonOutlined";
+import bgEffect from "../../../../public/img/BG.png";
+import user1 from "../../../../public/img/user1.png";
+import user2 from "../../../../public/img/user2.png";
+import user3 from "../../../../public/img/user3.png";
+import user4 from "../../../../public/img/user4.jpg";
 
 const rateInfo = [
   {
@@ -37,71 +43,119 @@ const Hero = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      className="min-h-[88vh] flex items-center pb-14 xl:pb-8 bg-primary text-white w-full"
+      // className="min-h-[88vh] flex items-center pb-14 xl:pb-8 bg-primary text-white w-full"
+      className="w-full min-h-[110vh]  md:min-h-[120vh] bg-cover bg-center relative pt-6 lg:pt-20 "
+      style={{ backgroundImage: `url(${bgEffect.src})` }}
     >
-      <div className="w-full lg:w-[88%] mx-auto px-4 lg:px-0">
-        <div className="flex flex-col lg:flex-row justify-between text-white lg:mt-10 2xl:mt-0">
-          <div className="flex flex-col gap-2 lg:gap-5 justify-center items-start lg:w-1/2">
+      <div className="w-full lg:w-[90%] mx-auto px-4 lg:px-0">
+        <div className="flex flex-col lg:flex-row justify-between  text-white lg:mt-10 2xl:mt-0">
+          <div className="flex flex-col gap-3 justify-center items-start lg:w-[60%] ">
             <motion.h1
               variants={navVariants}
-              className="text-[40px] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[90px] 2xl:text-8xl font-darkerGrotesque leading-[120%] lg:leading-[110%] xl:leading-[100%] 2xl:leading-[100px] font-bold mt-6 lg:mt-0"
+              className="text-[40px] sm:text-5xl lg:text-6xl 2xl:text-[72px] font-aeonik-pro leading-[120%] lg:leading-[110%] xl:leading-[100%] 2xl:leading-[80px] mt-6 lg:mt-0"
             >
               Send money to India with best rates & zero fees
             </motion.h1>
 
             <motion.p
               variants={fadeIn("up", "tween", 0.2, 1)}
-              className="font-darkerGrotesque text-lg lg:text-2xl font-medium text-white/70 mb-4"
+              className="font-matter-regular text-base lg:text-xl font-medium lg:leading-[30px] text-white/70 mb-5 lg:mb-8"
             >
               Get more INR for every CAD you send, better than banks, better
               than competitors. No hidden fees. No bad surprises. Just the best
               exchange rates in Canada – every single time!
             </motion.p>
             <motion.div variants={fadeIn("up", "tween", 0.4, 1)}>
-              <Button lable="Send Money Now" secondary />
+              <ButtonOutlined lable="Send Money Now" />
             </motion.div>
           </div>
 
-          <div className="flex flex-col gap-[22px] w-full max-w-[430px] lg:ml-auto mt-10 lg:mt-16 overflow-hidden">
-            {rateInfo.map((item, index) => (
-              <div
-                variants={fadeIn("up", "spring", index * 0.5, 1)}
-                key={index}
-                className={`bg-white ${
-                  index !== 1
-                    ? " opacity-50"
-                    : " relative z-20 shadow-[0_0px_25px_18px_rgb(2,61,206)] md:shadow-[0_0px_45px_28px_rgb(2,61,206)] opacity-100"
-                } border w-full border-[#DEDEDE] flex justify-between items-center px-4 py-3.5 rounded-[16px]`}
-              >
-                <div className="flex items-center gap-3.5">
-                  <Image
-                    src={item.icon}
-                    alt=""
-                    width={54}
-                    height={54}
-                                        className="w-[40px] h-[40px] md:w-[54px] md:h-[54px]"
-                  />
-                  <div>
-                    <span className="text-[#03012E80]/50 font-normal font-openSans text-base md:text-lg">
-                      {item.lable}:
-                    </span>
-                    <h6
-                      className={`text-dark font-semibold ${
-                        index === 1 ? "text-base md:text-lg" : "text-[15px] md:text-[17px]"
-                      } `}
-                    >
-                      {item.rate}
-                    </h6>
+          <div className="hidden lg:flex flex-col gap-[22px] w-full max-w-[400px] lg:ml-auto mt-10 lg:mt-16 overflow-hidden">
+           {rateInfo.map((item, index) => {
+              const isActive = index === 1;
+              return (
+                <motion.div
+                  key={index}
+                  variants={fadeIn("up", "spring", index * 0.5, 1)}
+                  initial="hidden"
+                  animate={{
+                    opacity: isActive ? 1 : 0.5,
+                    y: 0,
+                  }}
+                  transition={{ delay: index * 0.5, type: "spring", duration: 1 }}
+                  className={`bg-white ${
+                    isActive
+                      ? "relative z-20 shadow-[0_0px_25px_18px_rgb(0,6,177)] md:shadow-[0_0px_45px_28px_rgb(0,6,177)] opacity-100"
+                      : ""
+                  } border w-full border-[#DEDEDE] flex justify-between items-center px-4 py-3.5 rounded-[16px]`}
+                >
+                  <div className="flex items-center gap-3.5">
+                    <Image
+                      src={item.icon}
+                      alt=""
+                      width={54}
+                      height={54}
+                      className="w-[40px] h-[40px] md:w-[50px] md:h-[50px]"
+                    />
+                    <div>
+                      <span className="text-[#03012E80]/50 font-matter-regular text-base">
+                        {item.lable}:
+                      </span>
+                      <h6 className="text-dark font-matter-semibold text-base">
+                        {item.rate}
+                      </h6>
+                    </div>
                   </div>
-                </div>
-                <span className="bg-[#5CB85C26]/15 rounded-full px-5 py-2 font-openSans text-[#5CB85C] font-semibold text-[15px] lg:text-[17px]">
-                  {item.pecentage}
-                </span>
-              </div>
-            ))}
+                  <span className="bg-[#5CB85C26]/15 rounded-full px-5 py-2 font-openSans text-[#5CB85C] font-semibold text-[15px]">
+                    {item.pecentage}
+                  </span>
+                </motion.div>
+              );
+            })}
           </div>
-
-          <div></div>
+        </div>
+      </div>
+ <div
+        className="
+          absolute -bottom-[6%] lg:-bottom-[20%]
+          left-1/2 -translate-x-1/2
+          w-full lg:w-[90%] mx-auto px-4 lg:px-0
+        "
+      >
+        {/* 
+          Use flex + overflow-x-auto on mobile,
+          switch back to grid-cols-4 on lg+
+        */}
+        <div
+          className="
+            flex lg:grid lg:grid-cols-4 gap-2 lg:gap-7
+            overflow-x-auto lg:overflow-hidden
+            snap-x snap-mandatory
+            ml-4 lg:ml-0  
+            px-4     hide-scrollbar    
+          "
+        >
+          {[user1, user2, user3, user4].map((src, index) => (
+            <motion.div
+              key={index}
+              initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={fadeIn("right", "spring", index * 0.3, 0.75)}
+              className="
+                flex-shrink-0 w-[235px] lg:w-auto
+                snap-start
+                border-b border-[#CDCCDB] pb-7
+                mx-2 lg:mx-0        /* spacing in scroll mode */
+              "
+            >
+              <Image
+                src={src}
+                alt=""
+                className="rounded-xl object-cover object-center h-[280px] md:h-[370px] w-full"
+              />
+            </motion.div>
+          ))}
         </div>
       </div>
     </motion.div>

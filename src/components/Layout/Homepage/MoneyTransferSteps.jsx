@@ -21,14 +21,14 @@ const MoneyTransferSteps = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="layout-container pt-20 pb-14 lg:pb-20"
+      className="layout-container pt-10 pb-14 lg:pb-20"
     >
       <motion.h2
         variants={footerVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="heading text-center lg:w-[50%] mx-auto lg:!leading-[70px]"
+        className="heading text-center lg:w-[60%] mx-auto lg:!leading-[70px]"
       >
         Send Money to India in 4 Simple Steps
       </motion.h2>

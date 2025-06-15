@@ -1,22 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import shaddowBg from "../../../public/img/shaddow-ellipse.svg";
 import bgEffect from "../../../public/img/BG.png";
-import aboutBg from "../../../public/img/about-bg.jpg";
-import { RxCross2 } from "react-icons/rx";
-import whyRemiflow from "../../../public/img/why-remiflow.jpg";
-import phone from "../../../public/img/phone.svg";
-import { GiCheckMark } from "react-icons/gi";
-import { FaCheckCircle } from "react-icons/fa";
 import Button from "@/components/Ui/Button";
-import { IoIosMail } from "react-icons/io";
-import { FaPhoneAlt } from "react-icons/fa";
 import referal from "../../../public/img/referal.svg";
 import referalMobile from "../../../public/img/referal-mobile.svg";
-import howToRefer from "../../../public/img/how-to-refer.png";
 import laptopPerson from "../../../public/img/person-with-laptop.svg";
 import ellipse from "../../../public/img/Ellipse.png";
 import FAQ from "@/components/Layout/Homepage/FAQ";
+import ButtonOutlined from "@/components/Shared/ButtonOutlined";
 
 const howReferWorks = [
   {
@@ -36,19 +27,12 @@ const howReferWorks = [
   },
 ];
 
-const moneyTransfer = [
-  "No hidden fees. What you send is what your family gets.",
-  "More INR per CAD. We offer better exchange rates than banks & competitors.",
-  "Hassle-free transfers. Pay via Interac e-Transfer or schedule a cash pickup.",
-  "No corporate greed. We don’t take big profits like the big guys—our mission is to serve our community.",
-  "Remiflow is made by immigrants, for immigrants—so you can send money with confidence.",
-];
 const page = () => {
   return (
     <div className="relative">
       <div
-        className="w-full min-h-[105vh] lg:min-h-[110vh] bg-primary relative overflow-hidden"
-        // style={{ backgroundImage: `url(${bgEffect.src})` }}
+        className="w-full min-h-[110vh] lg:min-h-[115vh] relative overflow-hidden lg:overflow-auto"
+        style={{ backgroundImage: `url(${bgEffect.src})` }}
       >
         {/* hero */}
         <div className="w-full lg:w-[88%] mx-auto px-4 lg:px-0 pt-6 lg:pt-20 ">
@@ -57,14 +41,17 @@ const page = () => {
               <h2 className="font-aeonik-pro text-white leading-[120%] text-[40px] md:text-[50px] lg:text-[55px] xl:text-[70px] ">
                 Join our Referral program
               </h2>
-              <p className="font-matter-regular text-white leading-[150%] text-base lg:text-xl  mt-4 mb-10">
-                Get more INR for every CAD you send, better than banks, better
-                than competitors. No hidden fees. No bad surprises. Just the
-                best exchange rates in Canada – every single time!
-              </p>
-              <button className="realtive z-40 bg-white font-matter-semibold text-xl text-dark tracking-[-2%] rounded-xl px-7 py-3.5 mb-5 lg:mb-0">
-                Send Money Now
-              </button>
+              <p
+              
+              className="font-matter-regular mt-3 text-base lg:text-xl lg:leading-[30px] font-medium text-white/70 mb-5 lg:mb-8"
+            >
+              Get more INR for every CAD you send, better than banks, better
+              than competitors. No hidden fees. No bad surprises. Just the best
+              exchange rates in Canada – every single time!
+            </p>
+            <div className="relative z-30">
+              <ButtonOutlined lable="Send Money Now" />
+            </div>
             </div>
           </div>
         </div>

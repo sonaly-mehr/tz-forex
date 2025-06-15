@@ -31,7 +31,7 @@ const GetStartedNow = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      className="px-4 lg:px-0  md:w-[90%] mx-auto py-3 lg:py-16"
+      className="layout-container py-0 lg:py-16"
     >
       <div
         className="relative w-full lg:h-[700px] bg-cover bg-center rounded-[26px]  overflow-hidden"
@@ -47,15 +47,15 @@ const GetStartedNow = () => {
           </motion.h2>
           <motion.p
             variants={fadeIn("up", "tween", 0.2, 1)}
-            className="md:w-[60%] lg:w-[40%] font-openSans font-normal text-white/70 lg:leading-[30px] text-base  lg:text-lg"
+            className="md:w-[60%] lg:w-[40%] font-matter-regular text-white lg:text-white/70 lg:leading-[30px] text-base  lg:text-lg"
           >
-            Make the smart choice – experience RemiFlow now and enjoy the best
+            Make the smart choice – experience tz forex now and enjoy the best
             exchange rates with zero fees.
           </motion.p>
           <motion.div variants={fadeIn("up", "tween", 0.4, 1)}>
             <Button
               lable="Get Started Now"
-              className="  font-aeonik-pro w-fit px-8 py-5 mt-8 lg:mt-2"
+              className="  font-aeonik-pro w-full lg:w-fit px-8 py-5 mt-8 lg:mt-2 lg:text-xl"
             />
           </motion.div>
         </div>
@@ -71,7 +71,7 @@ const GetStartedNow = () => {
             <div className="flex gap-3 p-3 lg:p-5 bg-white w-fit rounded-full">
               <FaCheckCircle className="text-[#5CB85C] text-[22px]" />
               <span className="font-matter-medium text-dark text-sm lg:text-base leading-snug">
-                Switch to RemiFlow Today
+                Switch to tz forex Today
               </span>
             </div>
             <div className="flex gap-3 p-3 lg:p-5 bg-white w-fit rounded-full">

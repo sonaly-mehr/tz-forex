@@ -19,13 +19,13 @@ const SendMoney = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.4 }}
-      className="py-0 lg:py-10 layout-container"
+      className="pt-24 lg:pt-60 pb-10 layout-container"
     >
       <div className="flex flex-col lg:flex-row gap-5 xl:gap-[70px] items-center justify-between">
         <div className="flex flex-col gap-8 flex-1">
           <motion.h4
             variants={fadeIn("up", "tween", 0.4, 1)}
-            className="font-bold text-[32px] lg:text-5xl font-darkerGrotesque text-dark tracking-[-1.5%] leading-10 lg:leading-[55px]"
+            className="text-[32px] lg:text-5xl font-aeonik-pro text-dark tracking-[-1.5%] leading-10 lg:leading-[55px]"
           >
             Send money with confidence see how much they’ll receive instantly!
           </motion.h4>
@@ -60,7 +60,7 @@ const SendMoney = () => {
 
         {/* send money */}
         <div
-          className="lg:flex-1 w-full lg:min-h-[820px] rounded-[30px] bg-cover bg-center relative flex justify-center items-center"
+          className="lg:flex-1 w-full lg:min-h-[820px] rounded-xl lg:rounded-[30px] bg-cover bg-center relative flex justify-center items-center"
           style={{ backgroundImage: `url(${sendMoney.src})` }}
         >
           {/* Calculator Widget */}
@@ -71,16 +71,16 @@ const SendMoney = () => {
             transition={{ duration: 1, type: "spring", stiffness: 100 }}
             className=" backdrop-blur-[204px] border-[#FFFFFF]
   shadow-[0px_14px_34px_0px_#C7C7C733] 
-  bg-[linear-gradient(180deg,rgba(255,255,255,0.8)_0%,rgba(255,255,255,0.64)_100%)] rounded-3xl p-3  lg:p-8 w-[92%] lg:w-[90%] mx-auto my-5 sm:my-7 border"
+  bg-[linear-gradient(180deg,rgba(255,255,255,0.8)_0%,rgba(255,255,255,0.64)_100%)] rounded-xl lg:rounded-3xl p-3  lg:p-8 w-[92%] lg:w-[90%] mx-auto my-5 sm:my-7 border"
           >
             {/* Send Amount */}
             <div className="relative w-full">
               <div className="flex items-center justify-between bg-white rounded-2xl p-4 shadow-[0px_10px_14px_-10px_#9999993D] border border-[#EAEAEA99]">
                 <div className="flex flex-col ">
-                  <label className="text-[#6D6C6B80]/50 font-openSans font-normal text-sm  block">
+                  <label className="text-[#6D6C6B80]/50 font-matter-regular  text-sm  block">
                     You send:
                   </label>
-                  <span className="text-[28px] lg:text-[32px] font-matter-medium text-[#161616] bg-transparent outline-none">
+                  <span className="text-2xl lg:text-[32px] font-matter-medium text-[#161616] bg-transparent outline-none">
                       1000
                     </span>
                 </div>
@@ -104,10 +104,10 @@ const SendMoney = () => {
               <div className="mb-8 mt-4 lg:mt-9">
                 <div className="flex items-center justify-between bg-white  rounded-2xl p-4 shadow-[0px_10px_14px_-10px_#9999993D] border border-[#EAEAEA99]">
                   <div className="flex flex-col">
-                    <label className="text-[#6D6C6B80]/50 font-openSans font-normal text-sm  block">
+                    <label className="text-[#6D6C6B80]/50 font-matter-regular text-sm  block">
                       Recipient Receives:
                     </label>
-                    <span className="text-[28px] lg:text-[32px] font-matter-medium text-[#161616] bg-transparent outline-none">
+                    <span className="text-2xl lg:text-[32px] font-matter-medium text-[#161616] bg-transparent outline-none">
                       61,250
                     </span>
                   </div>
@@ -132,16 +132,16 @@ const SendMoney = () => {
                   1 CAD = ₹61.25 INR
                 </p>
               </div>
-              <p className="text-xs lg:text-sm text-[#03012E80]/50 text-right w-[80%] font-openSans font-normal">
+              <p className="text-xs lg:text-sm text-[#6D6C6B] text-right w-[80%] font-openSans font-normal">
                 (Updated every 2 hours for accuracy.)
               </p>
             </div>
             {/* Payment Details */}
-            <div className="border rounded-2xl p-3.5 lg:p-5 ">
+            <div className="border border-[#E4E4E4] rounded-2xl p-3.5 lg:p-5 ">
               <h3 className="text-lg font-aeonik-pro text-dark mb-5">
                 Payment & Delivery Details:
               </h3>
-              <div className="space-y-1.5">
+              <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2 lg:space-x-3 mb-2">
                     <div className="w-3 h-3 bg-primary rounded-full"></div>
@@ -149,7 +149,7 @@ const SendMoney = () => {
                       Pay with
                     </span>
                   </div>
-                  <div className="bg-white rounded px-2 py-1 flex gap-2 items-center mt-2 ">
+                  <div className="bg-white rounded-[4px] px-2 py-1 flex gap-2 items-center mt-2 ">
                     <span className="text-xs text-[#02001A80]/50 font-openSans font-normal">
                       Interac
                     </span>
@@ -170,7 +170,7 @@ const SendMoney = () => {
               </div>
             </div>
             {/* Total Fees */}
-            <div className="bg-white boder  border-[#EAEAEA99] rounded-2xl p-3 lg:p-4 my-7">
+            <div className="bg-white boder  border-[#EAEAEA] rounded-2xl p-3 lg:p-4 my-7">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2 lg:space-x-4">
                   <Image src={totalFee} alt="Fees" width={40} height={40} />

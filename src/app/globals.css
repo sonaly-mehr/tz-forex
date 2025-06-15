@@ -125,33 +125,17 @@ html {
   }
 }
 .layout-container {
-  @apply md:w-[90%] mx-auto px-4 lg:px-0;
+  @apply md:w-[95%] mx-auto px-4 lg:px-0;
 }
 .heading {
-  @apply text-dark font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 font-figtree;
+  @apply text-dark text-3xl md:text-4xl lg:text-5xl xl:text-[70px] mb-4 font-aeonik-pro xl:leading-[80px];
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
-@keyframes accordion-down {
-  from {
-    height: 0;
-  }
-  to {
-    height: var(--radix-accordion-content-height);
-  }
-}
-@keyframes accordion-up {
-  from {
-    height: var(--radix-accordion-content-height);
-  }
-  to {
-    height: 0;
-  }
-}
-
-.accordion-content[data-state="open"] {
-  animation: accordion-down 0.2s ease-out;
-}
-/* When AccordionContent has data-state="closed", play accordion-up */
-.accordion-content[data-state="closed"] {
-  animation: accordion-up 0.2s ease-out;
+/* For IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }

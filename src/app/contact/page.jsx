@@ -1,13 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import shaddowBg from "../../../public/img/shaddow-ellipse.svg";
 import bgEffect from "../../../public/img/BG.png";
-import aboutBg from "../../../public/img/about-bg.jpg";
-import { RxCross2 } from "react-icons/rx";
-import whyRemiflow from "../../../public/img/why-remiflow.jpg";
-import phone from "../../../public/img/phone.svg";
-import { GiCheckMark } from "react-icons/gi";
-import { FaCheckCircle, FaRegUser } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
 import Button from "@/components/Ui/Button";
 import { IoIosMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -18,6 +12,7 @@ import { IoMailOutline } from "react-icons/io5";
 import { RiMessage2Line } from "react-icons/ri";
 import { GrLocation } from "react-icons/gr";
 import { CiClock2 } from "react-icons/ci";
+import ButtonOutlined from "@/components/Shared/ButtonOutlined";
 
 const whyChooseRemiflow = [
   {
@@ -58,12 +53,12 @@ const page = () => {
   return (
     <div className="relative">
       <div
-        className="w-full min-h-[110vh]  md:min-h-[130vh] bg-cover bg-center relative"
+        className="w-full min-h-[110vh]  md:min-h-[120vh] bg-cover bg-center relative overflow-x-hidden"
         style={{ backgroundImage: `url(${bgEffect.src})` }}
       >
         {/* hero */}
-        <div className="w-full lg:w-[88%] mx-auto px-4 lg:px-0 pt-6 lg:pt-20 ">
-          <div className="flex justify-between flex-col md:flex-row gap-14 lg:gap-20 lg:items-center">
+        <div className="w-full lg:w-[88%] mx-auto px-4 lg:px-0 pt-6 lg:pt-16 ">
+          <div className="flex justify-between flex-col md:flex-row gap-14 lg:gap-24 lg:items-center">
             <div className="lg:w-[80%]">
               <h2 className="font-aeonik-pro text-white leading-[120%] text-[40px] md:text-[50px] lg:text-[55px] xl:text-[70px] ">
                 Contact Us – We’re Here to Help!
@@ -72,9 +67,7 @@ const page = () => {
                 Have a question about sending money to India? Need support? Our
                 team is always here to assist you!
               </p>
-              <button className="bg-white font-matter-semibold text-xl text-dark tracking-[-2%] rounded-xl px-7 py-3.5 ">
-                Contact Us
-              </button>
+              <ButtonOutlined lable="Contact Us" className="lg:py-4" />
             </div>
 
             <div className="rounded-2xl lg:rounded-3xl backdrop-blur-[204px] shadow-[0px_10px_56px_0px_#00000029] p-5 lg:p-8 border border-white lg:border-[#CECECE]  bg-[linear-gradient(180deg,_rgba(255,255,255,0.8)_0%,_rgba(255,255,255,0.64)_100%)]">

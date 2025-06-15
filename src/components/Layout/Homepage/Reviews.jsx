@@ -110,7 +110,7 @@ const Reviews = () => {
   );
 
   return (
-    <div className="bg-white pb-20 lg:pt-20 xl:pt-0">
+    <div className="bg-white pb-0 lg:pb-14 lg:pt-20 xl:pt-0">
       <h2 className="text-[#183B56] text-3xl lg:text-[60px] font-medium text-center px-4 lg:px-0 xl:w-[42%] mx-auto leading-tight tracking-[-2.5%]">
         Trusted by immigrants in Canada
       </h2>

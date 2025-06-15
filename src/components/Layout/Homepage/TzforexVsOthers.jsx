@@ -2,7 +2,7 @@
 import React from "react";
 import bg from "../../../../public/img/comparison-bg.jpg";
 import Image from "next/image";
-import remiflow from "../../../../public/img/icons/remiflow.svg";
+import tzforex from "../../../../public/img/icons/tzforex.svg";
 import remitly from "../../../../public/img/icons/remitly.svg";
 import wise from "../../../../public/img/icons/wise.svg";
 import bank from "../../../../public/img/icons/bank.svg";
@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 
 const data = [
   {
-    logo: remiflow,
+    logo: tzforex,
     isHighlight: true,
     recipient: "₹61,250 Rupee",
     delta: "₹1,050 - ₹2,465 More!",
@@ -43,15 +43,15 @@ const data = [
   },
 ];
 
-const RemiflowVsOthers = () => {
+const TzforexVsOthers = () => {
   return (
-    <div className="layout-container py-16 lg:py-24">
+    <div className="layout-container py-16 lg:py-28">
       <motion.span
         variants={footerVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="font-figtree text-primary font-normal text-base lg:text-2xl uppercase text-center block"
+        className="font-aeonik-pro text-primary font-normal text-base lg:text-2xl capitalize text-center block"
       >
         See How Much You Save
       </motion.span>
@@ -60,9 +60,9 @@ const RemiflowVsOthers = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.4 }}
-        className="font-darkerGrotesque font-semibold text-4xl lg:text-[70px] text-dark mt-1.5 pb-12 text-center"
+        className="heading mt-2 lg:mt-4 pb-8 text-center"
       >
-        Remiflow vs. Others
+       tz forex vs. Others
       </motion.h3>
 
       <div
@@ -91,7 +91,7 @@ const RemiflowVsOthers = () => {
                       <p className="text-xl text-dark font-matter-medium mb-2.5">
                         Recipient gets
                       </p>
-                      <p className="text-sm text-[#6D6C6B] font-openSans">
+                      <p className="text-sm text-[#6D6C6B] font-matter-regular">
                         (Total after fees)
                       </p>
                     </div>
@@ -119,7 +119,7 @@ const RemiflowVsOthers = () => {
                     key={i}
                     className={`${
                       row.isHighlight
-                        ? "bg-blue-600 text-white"
+                        ? "bg-primary text-white"
                         : "border-b border-gray-200"
                     } relative`}
                   >
@@ -128,7 +128,7 @@ const RemiflowVsOthers = () => {
                         <Image
                           src={row.logo}
                           alt=""
-                          width={row.isHighlight ? 250 : 180}
+                          width={row.isHighlight ? 230 : 180}
                           height={row.isHighlight ? 80 : 50}
                           className="h-auto w-[100px] lg:w-auto"
                         />
@@ -287,4 +287,4 @@ const RemiflowVsOthers = () => {
   );
 };
 
-export default RemiflowVsOthers;
+export default TzforexVsOthers;
