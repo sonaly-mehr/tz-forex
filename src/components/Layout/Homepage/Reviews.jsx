@@ -115,8 +115,7 @@ const Reviews = () => {
         Trusted by immigrants in Canada
       </h2>
 
-      {isMobile ? (
-        <div className="my-12">
+        <div className="block md:hidden my-12">
           <Slider ref={sliderRef} {...sliderSettings}>
             {reviews1.map((item, idx) => renderReviewCard(item, idx))}
           </Slider>
@@ -144,8 +143,8 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-      ) : (
-        <div className="relative mt-10">
+
+        <div className="hidden md:block relative mt-10">
           {/* Slider 1 */}
           <motion.div className="flex" animate={{ x: ["0%", "-100%"] }} transition={marqueeSettings}>
             {[...reviews1, ...reviews1].map((item, idx) => (
@@ -166,7 +165,7 @@ const Reviews = () => {
             </motion.div>
           </div>
         </div>
-      )}
+
     </div>
   );
 };

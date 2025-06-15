@@ -170,8 +170,8 @@ useEffect(() => {
           </motion.div>
         </div>
 
-      {isMobile ? (
-  <div className="my-12">
+  
+  <div className="block md:hidden my-12">
     <Slider ref={sliderRef} {...sliderSettings}>
       {benefits.map((item, idx) => (
         <div key={idx} className="px-2">
@@ -214,11 +214,11 @@ useEffect(() => {
               </div>
             </div>
           </div>
-        ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 my-12">
+       
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-7 my-12">
             {benefits.map((item, idx) => renderCard(item, idx))}
           </div>
-        )}
+
       </div>
     </motion.div>
   );
