@@ -19,7 +19,7 @@ const Subscribe = () => {
   return (
     <div className="w-full lg:w-[88%] mx-auto px-4 lg:px-0  my-14 lg:mt-20 lg:mb-40">
       <div
-        className=" px-4  py-6 md:px-20 rounded-3xl lg:rounded-[40px] md:pt-16 bg-cover bg-center relative"
+        className=" px-4  py-6 md:px-20 overflow-hidden rounded-3xl lg:rounded-[40px] md:pt-16 bg-cover bg-center relative"
         style={{ backgroundImage: `url(${subcribeBg.src})` }}
       >
         <div className="md:w-[60%] flex flex-col gap-4 lg:gap-5  pb-[65%]  lg:pb-0">

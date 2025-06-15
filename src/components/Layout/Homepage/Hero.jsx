@@ -44,7 +44,7 @@ const Hero = () => {
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       // className="min-h-[88vh] flex items-center pb-14 xl:pb-8 bg-primary text-white w-full"
-      className="w-full min-h-[110vh]  md:min-h-[120vh] bg-cover bg-center relative pt-6 lg:pt-20 "
+      className="w-full min-h-screen  md:min-h-[120vh] bg-cover bg-center relative pt-6 lg:pt-20 "
       style={{ backgroundImage: `url(${bgEffect.src})` }}
     >
       <div className="w-full lg:w-[90%] mx-auto px-4 lg:px-0">

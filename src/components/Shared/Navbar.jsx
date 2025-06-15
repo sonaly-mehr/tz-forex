@@ -22,7 +22,8 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  
+    const isLinkActive = (href) =>
+    href === "/blog" ? pathname.startsWith("/blog") : pathname === href;
   return (
     <motion.header
       initial={{ opacity: 0, y: -50 }}
@@ -130,17 +131,27 @@ text-sm lg:text-base
               </div>
             </div>
             <div className="py-9 flex flex-col">
-              <ul className="uppercase flex flex-col gap-6">
-                {navLinks?.map((link, index) => (
-                  <Link
-                    href={link?.href}
-                    key={index}
-                    onClick={() => setNav(false)}
-                    className="text-base font-semibold text-white hover:text-white/90 transition cursor-pointer"
-                  >
-                    {link.lable}
-                  </Link>
-                ))}
+              <ul className="uppercase flex flex-col gap-3">
+                {navLinks?.map((link) => {
+            const active = isLinkActive(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setNav(false)}
+                className={[
+                  "text-base font-semibold transition-colors duration-300",
+                  active
+                    ? "bg-white/10 text-white p-2 rounded-lg"
+                    : "text-white/70 hover:text-white hover:bg-white/10 p-2 rounded-lg",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
+                {link.lable}
+              </Link>
+            );
+          })}
               </ul>
             </div>
 

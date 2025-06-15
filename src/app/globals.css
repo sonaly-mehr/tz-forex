@@ -140,3 +140,6 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
 }
+.mobile-scroll-wrapper {
+  overflow-x: auto !important;
+}

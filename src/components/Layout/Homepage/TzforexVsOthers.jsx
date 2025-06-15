@@ -62,7 +62,7 @@ const TzforexVsOthers = () => {
         viewport={{ once: true, amount: 0.4 }}
         className="heading mt-2 lg:mt-4 pb-8 text-center"
       >
-       tz forex vs. Others
+        tz forex vs. Others
       </motion.h3>
 
       <div
@@ -74,10 +74,10 @@ const TzforexVsOthers = () => {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 1, type: "spring", stiffness: 100 }}
-          className="bg-white overflow-hidden rounded-3xl w-full  lg:w-[95%] mx-auto  min-h-[600px]  border-[12px] border-[#EBEBF2]/95 shadow-[0px_6px_10px_0px_#EFEFEF33] backdrop-blur-[30px]"
+          className="bg-white hidden lg:block  rounded-3xl w-full  lg:w-[95%] mx-auto  min-h-[600px]  border-[12px] border-[#EBEBF2]/95 shadow-[0px_6px_10px_0px_#EFEFEF33] backdrop-blur-[30px]"
         >
           {/* DESKTOP TABLE */}
-          <div className="overflow-x-auto hidden lg:block">
+          <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-200">
@@ -187,21 +187,25 @@ const TzforexVsOthers = () => {
               </tbody>
             </table>
           </div>
+        </motion.div>
 
-          {/* MOBILE STACKED CARDS */}
-          <div className="lg:hidden space-y-6 ">
-            <h4 className="text-lg font-matter-medium mb-[-15px]   p-4">
+        {/* MOBILE STACKED CARDS */}
+
+        <div className="bg-white block lg:hidden rounded-3xl overflow-hidden w-full  lg:w-[95%] mx-auto  min-h-[600px]  border-[12px] border-[#EBEBF2]/95 shadow-[0px_6px_10px_0px_#EFEFEF33] backdrop-blur-[30px]">
+          <div className="space-y-6 w-full">
+            <h4 className="text-lg font-matter-medium mb-[-15px] p-4">
               Sending $1,000 CAD with
             </h4>
 
             {data.map((row, i) => (
               <div
                 key={i}
-                className={` p-4 ${
-                  row.isHighlight ? "bg-primary text-white " : "bg-white shadow"
+                className={`p-4 ${
+                  row.isHighlight ? "bg-primary text-white" : "bg-white shadow"
                 }`}
               >
-                <div className="flex  justify-between  mb-5">
+                {/* Top row: logo + badge or delta */}
+                <div className="flex justify-between mb-5">
                   <Image
                     src={row.logo}
                     alt=""
@@ -209,79 +213,73 @@ const TzforexVsOthers = () => {
                     height={40}
                     className="object-contain"
                   />
-                  {row.isHighlight ?  (
-                    <div className="bg-[#58F7FF] rounded-lg overflow-hidden px-3 py-1 flex items-center space-x-1">
+
+                  {row.isHighlight ? (
+                    <div className="bg-[#58F7FF] rounded-lg px-3 py-1 flex items-center space-x-1">
                       <IoIosCheckmarkCircle className="text-dark" />
                       <span className="text-sm font-medium text-[#24554E]">
                         Cheapest
                       </span>
                     </div>
-
-                    
-                  ):                       <div className="">
-                     <span className="font-semibold">{row.recipient}</span>
-                     <div className="flex items-center ">
- <IoMdArrowDropdown className="text-2xl text-[#D80027]" />
-                        <span className="font-matter-medium text-[#D80027]">
+                  ) : (
+                    <div className="text-right">
+                      <span className="block font-semibold">
+                        {row.recipient}
+                      </span>
+                      <div className="flex items-center justify-end">
+                        <IoMdArrowDropdown className="text-2xl text-[#D80027]" />
+                        <span className="ml-1 font-matter-medium text-[#D80027]">
                           {row.delta}
                         </span>
-                     </div>
-                       
                       </div>
-                }
-                </div>
-                <div className="flex justify-between mb-6">
-                   {row.isHighlight && (
-                                      <div className="">
-                    <span className="font-matter-medium block">
-                      Recipient gets
-                    </span>
-                    <span className="text-[10px] font-matter-normal  text-white/70">
-                      (Total after fees)
-                    </span>
-                  </div>
+                    </div>
                   )}
+                </div>
 
-  {row.isHighlight && (
-                  <div>
-                   
-                  
-                       <span className="font-semibold">{row.recipient}</span>
-                      <p className="text-[#47FF19] text-[10px] font-matter-medium mt-2">
+                {/* Recipient / delta details (only for highlight) */}
+                {row.isHighlight && (
+                  <div className="flex justify-between mb-6">
+                    <div>
+                      <span className="block font-matter-medium">
+                        Recipient gets
+                      </span>
+                      <span className="text-[10px] text-white/70">
+                        (Total after fees)
+                      </span>
+                    </div>
+                    <div className="text-right">
+                      <span className="block font-semibold">
+                        {row.recipient}
+                      </span>
+                      <p className="mt-2 text-[10px] font-matter-medium text-[#47FF19]">
                         {row.delta}
                       </p>
-                      </div>
-                    )
+                    </div>
+                  </div>
+                )}
 
-                    }
-                  
-                </div>
+                {/* Fee */}
                 <div className="flex justify-between mb-4">
                   <span className="font-matter-medium">Transfer Fee</span>
                   <span>{row.fee}</span>
                 </div>
+
+                {/* Exchange Rate */}
                 <div className="flex justify-between mb-4">
                   <div>
-                    <span className="font-matter-medium block">
+                    <span className="block font-matter-medium">
                       Exchange Rate
                     </span>
-                    {row.isHighlight ? (
-                      <span className="text-[10px] font-matter-normal  text-white/70">
-                        (Total after fees)
-                      </span>
-                    ) : (
-                      <span className="text-[10px] font-matter-normal  text-[#0D0A08B2]/70">
-                        ((1 CAD → INR)
-                      </span>
-                    )}
+                    <span className="text-[10px] font-matter-normal text-white/70">
+                      {row.isHighlight ? "(Total after fees)" : "(1 CAD → INR)"}
+                    </span>
                   </div>
-
                   <span>{row.rate}</span>
                 </div>
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

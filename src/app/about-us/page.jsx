@@ -51,7 +51,7 @@ const page = () => {
   return (
     <div className="relative">
       <div
-        className="w-full min-h-screen  md:min-h-[120vh] bg-cover bg-center relative"
+        className="w-full min-h-[90vh]  md:min-h-[120vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgEffect.src})` }}
       >
         {/* hero */}
@@ -75,7 +75,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className=" absolute bottom-32 md:bottom-28  lg:-bottom-[230px] w-full">
+        <div className=" absolute bottom-44 md:bottom-28  lg:-bottom-[230px] w-full">
           <div className="w-[90%] mx-auto">
             <Image
               src={aboutBg}
