@@ -63,12 +63,12 @@ const WhyChoose = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
 
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 992);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+useEffect(() => {
+  const handleResize = () => setIsMobile(window.innerWidth < 768); // Use 768px breakpoint
+  handleResize();
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
 
   const sliderSettings = {
     dots: false,
@@ -170,16 +170,24 @@ const WhyChoose = () => {
           </motion.div>
         </div>
 
-        {isMobile ? (
-          <div className="my-12">
-            <Slider ref={sliderRef} {...sliderSettings}>
-              {benefits.map((item, idx) => (
-                <div key={idx} className="px-2">
-                  {" "}
-                  {renderCard(item, idx)}{" "}
-                </div>
-              ))}
-            </Slider>
+      {isMobile ? (
+  <div className="my-12">
+    <Slider ref={sliderRef} {...sliderSettings}>
+      {benefits.map((item, idx) => (
+        <div key={idx} className="px-2">
+          {/* Remove motion wrapper for mobile */}
+          <div className="bg-[#F7F8FA] rounded-2xl p-7">
+            <Image src={item.icon} alt={item.title} width={96} height={96} />
+            <h4 className="text-dark/85 font-medium text-[23px] mb-2 font-aeonik-pro">
+              {item.title}
+            </h4>
+            <p className="text-[15px] font-openSans font-normal text-dark/60 leading-[25px]">
+              {item.descp}
+            </p>
+          </div>
+        </div>
+      ))}
+    </Slider>
             <div className="flex items-center justify-center gap-4 p-4 mt-4">
               <div
                 className="w-12 h-12 bg-[#F6F8FA]  rounded-full flex items-center justify-center cursor-pointer"

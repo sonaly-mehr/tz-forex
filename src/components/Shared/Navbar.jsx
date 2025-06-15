@@ -76,7 +76,7 @@ text-sm lg:text-base
     font-matter-medium
     text-dark bg-white
      flex justify-center items-center
-    px-3 lg:px-6 rounded-lg pt-1 lg:pt-2.5 pb-2 lg:pb-3.5
+    px-3 lg:px-6 rounded-lg pt-1 lg:pt-2.5 py-3.5
     transform
     transition-transform duration-200 ease-in-out
     hover:scale-105
@@ -158,7 +158,7 @@ text-sm lg:text-base
     font-matter-medium
     text-dark bg-white
      flex justify-center items-center
-    px-3 lg:px-6 rounded-lg pt-2.5  pb-3.5
+    px-3 lg:px-6 rounded-lg py-3.5
     transform
     transition-transform duration-200 ease-in-out
     hover:scale-105 w-fit
