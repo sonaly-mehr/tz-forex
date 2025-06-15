@@ -122,8 +122,8 @@ const page = () => {
       </div>
 
       {/* Latest Post */}
-      <div className="-mt-[300px] md:mt-0 w-full lg:w-[88%] mx-auto px-4 lg:px-0 lg:py-20 relative z-10">
-        <h4 className="font-aeonik-pro text-dark text-[28px] lg:text-4xl mb-8 lg:mb-10">
+      <div className="-mt-[250px] md:mt-0 w-full lg:w-[88%] mx-auto px-4 lg:px-0 lg:py-20 relative z-10">
+        <h4 className="font-aeonik-pro text-dark text-[28px] lg:text-4xl mb-5 lg:mb-10">
           Latest posts
         </h4>
         <div className="flex flex-col lg:flex-row gap-5 lg:gap-[70px]">

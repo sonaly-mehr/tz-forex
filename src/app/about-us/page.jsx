@@ -51,7 +51,7 @@ const page = () => {
   return (
     <div className="relative">
       <div
-        className="w-full min-h-[90vh]  md:min-h-[120vh] bg-cover bg-center relative"
+        className="w-full min-h-screen  md:min-h-[120vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgEffect.src})` }}
       >
         {/* hero */}
@@ -117,7 +117,11 @@ const page = () => {
       {/* why-choose-txforex */}
       <div className="py-6 lg:py-12 px-4 lg:px-8 flex flex-col lg:flex-row gap-10 justify-between md:w-[90%] lg:w-[80%] mx-auto items-center">
         <div className="">
-          <Image src={whytzforex} alt="" className="object-cover object-center" />
+          <Image
+            src={whytzforex}
+            alt=""
+            className="object-cover object-center"
+          />
         </div>
 
         <div className="">
@@ -213,7 +217,7 @@ const page = () => {
               Headquartered in Canada Serving the Indian community across the
               country.
             </p>
-            <Button lable="Send Money Now" className="py-4 lg:py-6 px-6"/>
+            <Button lable="Send Money Now" className="py-4 lg:py-6 px-6" />
           </div>
 
           <div>

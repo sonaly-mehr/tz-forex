@@ -65,8 +65,8 @@ const SendMoney = () => {
         >
           {/* Calculator Widget */}
           <motion.div
-            initial={{ x: 200, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 1, type: "spring", stiffness: 100 }}
             className=" backdrop-blur-[204px] border-[#FFFFFF]

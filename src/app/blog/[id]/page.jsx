@@ -31,7 +31,7 @@ const Page = () => {
     <div className="relative">
       {/* hero */}
       <div
-        className="w-full min-h-[110vh]  md:min-h-[120vh] bg-cover bg-center relative"
+        className="w-full min-h-[120vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgEffect.src})` }}
       >
         <div className="w-full lg:w-[88%] mx-auto px-4 lg:px-0 pt-6 lg:pt-20">

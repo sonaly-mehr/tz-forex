@@ -131,7 +131,7 @@ const Hero = () => {
             flex lg:grid lg:grid-cols-4 gap-2 lg:gap-7
             overflow-x-auto lg:overflow-hidden
             snap-x snap-mandatory
-            ml-4 lg:ml-0  
+              
             px-4     hide-scrollbar    
           "
         >
