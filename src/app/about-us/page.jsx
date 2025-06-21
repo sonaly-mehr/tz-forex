@@ -81,6 +81,7 @@ const page = () => {
               src={aboutBg}
               alt=""
               className="w-full h-auto rounded-2xl overflow-hidden"
+               quality={100}
             />
           </div>
         </div>
@@ -121,6 +122,7 @@ const page = () => {
             src={whytzforex}
             alt=""
             className="object-cover object-center"
+            quality={100}
           />
         </div>
 
@@ -138,6 +140,7 @@ const page = () => {
                     width={23}
                     height={23}
                     className="w-[20px] lg:w-auto h-auto "
+                    quality={100}
                   />
                 </div>
                 <div>
@@ -201,7 +204,7 @@ const page = () => {
           </div>
 
           <div className="order-1  lg:order-2">
-            <Image src={phone} alt="" className="h-[300px] lg:h-auto" />
+            <Image src={phone} alt="" className="h-[300px] lg:h-auto" quality={100}/>
           </div>
         </div>
       </div>

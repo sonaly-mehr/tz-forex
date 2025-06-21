@@ -31,7 +31,7 @@ const page = () => {
   return (
     <div className="relative">
       <div
-        className="w-full min-h-[110vh] lg:min-h-[115vh] relative overflow-hidden lg:overflow-auto"
+        className="w-full min-h-[110vh] lg:min-h-[115vh] relative overflow-hidden"
         style={{ backgroundImage: `url(${bgEffect.src})` }}
       >
         {/* hero */}
@@ -41,28 +41,30 @@ const page = () => {
               <h2 className="font-aeonik-pro text-white leading-[120%] text-[40px] md:text-[50px] lg:text-[55px] xl:text-[70px] ">
                 Join our Referral program
               </h2>
-              <p
-              
-              className="font-matter-regular mt-3 text-base lg:text-xl lg:leading-[30px] font-medium text-white/70 mb-5 lg:mb-8"
-            >
-              Get more INR for every CAD you send, better than banks, better
-              than competitors. No hidden fees. No bad surprises. Just the best
-              exchange rates in Canada – every single time!
-            </p>
-            <div className="relative z-30">
-              <ButtonOutlined lable="Send Money Now" />
-            </div>
+              <p className="font-matter-regular mt-3 text-base lg:text-xl lg:leading-[30px] font-medium text-white/70 mb-5 lg:mb-8">
+                Get more INR for every CAD you send, better than banks, better
+                than competitors. No hidden fees. No bad surprises. Just the
+                best exchange rates in Canada – every single time!
+              </p>
+              <div className="relative z-30">
+                <ButtonOutlined lable="Send Money Now" />
+              </div>
             </div>
           </div>
         </div>
         <div className="absolute -bottom-5 sm:bottom-0 lg:-bottom-40 left-0 right-0  w-full z-20">
-          <Image src={ellipse} alt="" className="ellipse w-full" />
+          <Image src={ellipse} alt="" className="ellipse w-full" quality={100} />
         </div>
 
-         <div className="absolute -bottom-0 left-0 right-0">
-            {/* <Image src={referal} alt="" className="hidden md:block" /> */}
-            <Image src={referalMobile} alt="" className="block sm:hidden w-full" />
-          </div>
+        <div className="absolute -bottom-0 left-0 right-0">
+          {/* <Image src={referal} alt="" className="hidden md:block" /> */}
+          <Image
+            src={referalMobile}
+            alt=""
+            className="block sm:hidden w-full"
+            quality={100}
+          />
+        </div>
 
         {/* <div className="absolute right-0 bttom-0">
               <Image src={referal} alt="" className=""/>
@@ -112,14 +114,13 @@ const page = () => {
             </div>
           </div>
           <div className="absolute -top-[30%] sm:-top-[70%] lg:-top-[120%] lg:-right-14 z-0">
-            <Image src={referal} alt="" className="hidden sm:block" />
+            <Image src={referal} alt="" className="hidden sm:block" quality={100}/>
             {/* <Image src={referalMobile} alt="" className="block md:hidden" /> */}
           </div>
-
         </div>
-                  <div className="absolute right-[20%] sm:right-[20%] -top-[40%]  lg:-top-[60%] z-20 text-base lg:text-lg text-dark bg-white rounded-ss-full rounded-se-full rounded-ee-full px-4 py-2 font-openSans font-medium">
-            $20 referral bonus
-           </div>
+        <div className="absolute right-[20%] sm:right-[20%] -top-[40%]  lg:-top-[60%] z-20 text-base lg:text-lg text-dark bg-white rounded-ss-full rounded-se-full rounded-ee-full px-4 py-2 font-openSans font-medium">
+          $20 referral bonus
+        </div>
       </div>
 
       {/* <div className="bg-white  lg:pt-[280px]"></div> */}
@@ -131,7 +132,9 @@ const page = () => {
             <h6 className="text-dark font-matter-medium text-lg lg:text-xl">
               We believe that
             </h6>
-            <h2 className="font-aeonik-pro text-4xl md:text-5xl xl:text-[70px] 2xl:leading-[130%] text-dark mt-2 mb-6">Sharing is Caring</h2>
+            <h2 className="font-aeonik-pro text-4xl md:text-5xl xl:text-[70px] 2xl:leading-[130%] text-dark mt-2 mb-6">
+              Sharing is Caring
+            </h2>
             <p className="font-matter-light text-base lg:text-xl lg:leading-[150%] mb-8 text-center lg:text-left">
               Sharing Remitbee with friends and family doesn’t just help you
               earn money, but it also helps your loved ones save money. We’re
@@ -143,11 +146,12 @@ const page = () => {
           </div>
 
           <div className="lg:flex-1 order-1 lg:order-2">
-            <Image src={laptopPerson} alt="" className=""/>
-          </div> 
+            <img src={laptopPerson.src} alt="" />
+            {/* <Image src={laptopPerson} alt="" className=""/> */}
+          </div>
         </div>
       </div>
-            <div className="mt-16">
+      <div className="mt-16">
         {/* FAQ */}
         <FAQ />
       </div>

@@ -53,7 +53,7 @@ const page = () => {
   return (
     <div className="relative">
       <div
-        className="w-full min-h-[110vh]  md:min-h-[120vh] bg-cover bg-center relative overflow-x-hidden"
+        className="w-full min-h-[110vh]  md:min-h-[120vh] bg-cover bg-center relative"
         style={{ backgroundImage: `url(${bgEffect.src})` }}
       >
         {/* hero */}

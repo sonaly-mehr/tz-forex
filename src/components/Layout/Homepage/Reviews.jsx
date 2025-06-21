@@ -94,7 +94,7 @@ const Reviews = () => {
       <div className="bg-[#F9F9F9] rounded-2xl p-7">
         <div className="flex justify-between items-start mb-4">
           <div className="flex gap-3">
-            <Image src={item.icon} alt={item.name} width={50} height={50} className="rounded-full" />
+            <Image src={item.icon} alt={item.name} width={50} height={50} className="rounded-full" quality={100} />
             <div>
               <h4 className="text-[#040404] text-xl font-semibold">{item.name}</h4>
               <div className="flex gap-1 mt-2">

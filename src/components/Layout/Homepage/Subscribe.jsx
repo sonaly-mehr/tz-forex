@@ -43,7 +43,7 @@ const Subscribe = () => {
         </div>
 
         <div className="absolute bottom-[2.6%] xl:bottom-0 left-1/2 lg:left-auto -translate-x-1/2 lg:translate-x-0 lg:right-14">
-          <Image src={personImg} alt="" className="w-full" />
+          <Image src={personImg} alt="" className="w-full" quality={100}/>
         </div>
       </div>
     </div>

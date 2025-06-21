@@ -21,7 +21,7 @@ const MoneyTransferSteps = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="layout-container pt-10 pb-14 lg:pb-20"
+      className="layout-container pt-10 pb-8 lg:pb-20"
     >
       <motion.h2
         variants={footerVariants}
@@ -39,13 +39,13 @@ const MoneyTransferSteps = () => {
         Transfer money directly to all major banks in India, safely & securely.
       </motion.p>
 
-      <div className="flex flex-col lg:flex-row  gap-8">
+      <div className="flex flex-col lg:flex-row gap-6  lg:gap-8">
         <motion.div
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, type: "spring", stiffness: 100 }}
-          className="lg:basis-[58%] bg-[#F6F8FC] rounded-2xl py-8 px-3 lg:px-10 relative overflow-hidden"
+          className="lg:basis-[58%] bg-[#F6F8FC] rounded-2xl py-6 lg:py-8 px-3 lg:px-10 relative overflow-hidden"
         >
           <h4 className="font-aeonik-pro text-dark text-[22px] px-4 lg:px-0 lg:text-[26px] text-center">
             Sign Up & Complete KYC in 1 Minute or Login
@@ -54,8 +54,8 @@ const MoneyTransferSteps = () => {
             Quick verification to ensure secure transfers.
           </p>
 
-          <div className="flex w-full justify-center lg:justify-end mt-8">
-            <Image src={createAccount} alt="" className="w-full xl:w-auto" />
+          <div className="flex w-full justify-center lg:justify-end mt-4 md:mt-8">
+            <Image src={createAccount} alt="" className="w-[90%] mx-auto xl:w-auto" quality={100}/>
           </div>
 
           <div className="hidden xl:block absolute bottom-0 left-0 xl:w-[35%] 2xl:w-[40%] ">
@@ -67,7 +67,7 @@ const MoneyTransferSteps = () => {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 1, type: "spring", stiffness: 100 }}
-          className="basis-[40%] bg-[#F6F8FC] rounded-2xl py-8 px-3 lg:px-10 relative overflow-hidden"
+          className="basis-[40%] bg-[#F6F8FC] rounded-2xl py-6 lg:py-8 px-3 lg:px-10 relative overflow-hidden"
         >
           <h4 className="font-aeonik-pro text-dark text-[22px] px-4 lg:px-0 lg:text-[26px] text-center">
             Enter the Amount You Want to Send
@@ -77,19 +77,19 @@ const MoneyTransferSteps = () => {
             will receive in INR.
           </p>
 
-          <div className="flex justify-center  mt-10 w-full">
-            <Image src={transferMoney} alt="" className="w-full" />
+          <div className="flex justify-center  mt-4 md:mt-10 w-full">
+            <Image src={transferMoney} alt="" className="w-[90%] mx-auto md:w-full" quality={100}/>
           </div>
         </motion.div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8 mt-8">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 mt-8">
         <motion.div
           initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 1, type: "spring", stiffness: 100 }}
-          className="lg:basis-[40%] bg-[#F6F8FC] rounded-2xl py-8  relative overflow-hidden"
+          className="lg:basis-[40%] bg-[#F6F8FC] rounded-2xl py-6 lg:py-8  relative overflow-hidden"
         >
           <h4 className="font-aeonik-pro text-dark text-[22px] lg:text-[26px] text-center px-4 lg:px-10">
             Choose Your Payment Method
@@ -99,8 +99,8 @@ const MoneyTransferSteps = () => {
             Pick a time slot, and our driver collects cash from your location.
           </p>
 
-          <div className="flex justify-center  mt-10 w-[110%] mx-auto">
-            <Image src={paymentMethod} alt="" className="w-full mr-[9%]" />
+          <div className="flex justify-center mt-4  md:mt-10 md:w-[110%] mx-auto">
+            <Image src={paymentMethod} alt="" className="w-[90%] mx-auto md:w-full md:mr-[9%]" quality={100}/>
           </div>
         </motion.div>
 
@@ -109,7 +109,7 @@ const MoneyTransferSteps = () => {
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 1, type: "spring", stiffness: 100 }}
-          className="basis-[58%] bg-[#F6F8FC] rounded-2xl py-8 px-4 lg:px-10 relative overflow-hidden"
+          className="basis-[58%] bg-[#F6F8FC] rounded-2xl py-6 lg:py-8 px-4 lg:px-10 relative overflow-hidden"
         >
           <h4 className="font-aeonik-pro text-dark text-[22px] lg:text-[26px] text-center">
            Enter/Select Recipient’s Bank Details & Confirm
@@ -118,8 +118,8 @@ const MoneyTransferSteps = () => {
            INR is deposited directly into their Indian bank account—fast, easy, and with no hidden fees.
           </p>
 
-          <div className="flex justify-center  mt-10 w-full">
-            <Image src={paymentDetails} alt="" className="w-full" />
+          <div className="flex justify-center  mt-4 lg:mt-10 w-full">
+            <Image src={paymentDetails} alt="" className="w-[90%] mx-auto md:w-full" quality={100}/>
           </div>
         </motion.div>
       </div>

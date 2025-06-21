@@ -89,7 +89,7 @@ useEffect(() => {
       variants={fadeIn("right", "spring", index * 0.3, 0.75)}
       className="bg-[#F7F8FA] rounded-2xl p-7 ]"
     >
-      <Image src={item.icon} alt={item.title} width={96} height={96} />
+      <Image src={item.icon} alt={item.title} width={96} height={96} quality={100}/>
       <h4 className="text-dark/85 font-medium text-[23px] mb-2 font-aeonik-pro">
         {item.title}
       </h4>
@@ -128,8 +128,8 @@ useEffect(() => {
         </div>
 
         <div className="relative">
-          <Image src={userBg} className="hidden md:block w-full h-full" alt="background" />
-          <Image src={userBgMobile} className="block md:hidden w-full h-full" alt="background" />
+          <Image src={userBg} className="hidden md:block w-full h-full" alt="background" quality={100}/>
+          <Image src={userBgMobile} className="block md:hidden w-full h-full" alt="background" quality={100}/>
         <motion.div
             initial={{ x: 200, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -153,7 +153,7 @@ useEffect(() => {
 
               <div className="flex justify-between items-center mt-3">
                 <div className="flex gap-2 items-center">
-                  <Image src={CAD} className="w-[25px] h-[25px]" alt="" />
+                  <Image src={CAD} className="w-[25px] h-[25px]" alt="" quality={100}/>
                   <span className="font-openSans text-dark/60 font-normal text-lg">
                     CAD
                   </span>
@@ -177,7 +177,7 @@ useEffect(() => {
         <div key={idx} className="px-2">
           {/* Remove motion wrapper for mobile */}
           <div className="bg-[#F7F8FA] rounded-2xl p-7">
-            <Image src={item.icon} alt={item.title} width={96} height={96} />
+            <Image src={item.icon} alt={item.title} width={96} height={96} quality={100}/>
             <h4 className="text-dark/85 font-medium text-[23px] mb-2 font-aeonik-pro">
               {item.title}
             </h4>

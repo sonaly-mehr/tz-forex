@@ -143,3 +143,8 @@ html {
 .mobile-scroll-wrapper {
   overflow-x: auto !important;
 }
+.currency-select__control,
+.currency-select__option,
+.currency-select__dropdown-indicator {
+  cursor: pointer !important;
+}

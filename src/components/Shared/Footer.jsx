@@ -220,7 +220,7 @@ const Footer = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1, type: "spring", stiffness: 100 }}
             >
-              <Image src={tzforex} alt="" className="w-[170px] h-auto mb-4" />
+              <Image src={tzforex} alt="" className="w-[170px] h-auto mb-4" quality={100}/>
               <p className="font-openSans font-normal text-sm text-white/60 md:w-[65%] leading-6">
                 Fast. Secure. Effortless. Now, sending money to India is easier
                 than ever with the tz forex.
@@ -313,13 +313,13 @@ const Footer = () => {
                 href="/"
                 className="bg-[#1B1930] rounded-[5px] px-3 py-1.5 border border-white/20"
               >
-                <Image src={appStore} alt="" className="w-[100px] h-auto" />
+                <Image src={appStore} alt="" className="w-[100px] h-auto" quality={100}/>
               </Link>
               <Link
                 href="/"
                 className="bg-[#1B1930] rounded-[5px] px-3 py-1.5 border border-white/20"
               >
-                <Image src={googlePlay} alt="" className="w-[100px] h-auto" />
+                <Image src={googlePlay} alt="" className="w-[100px] h-auto" quality={100}/>
               </Link>
             </motion.div>
           </div>

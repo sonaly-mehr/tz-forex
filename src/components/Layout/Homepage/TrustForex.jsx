@@ -54,7 +54,7 @@ const TrustForex = () => {
 
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-2 ">
         <div className="relative lg:p-3 lg:flex-1">
-          <Image src={customerCare} alt="bitmap" className="rounded-[20px] w-full object-cover overflow-hidden object-center" />
+          <Image src={customerCare} alt="bitmap" className="rounded-[20px] w-full object-cover overflow-hidden object-center" quality={100}/>
           <div className="absolute left-1/2 -translate-x-1/2 bottom-[5%] lg:bottom-[7%] w-[95%] lg:w-[85%] mx-auto">
             <div className="flex flex-col gap-3 lg:gap-4  w-full">
               {benefits?.slice?.(0, 2).map((item, index) => (
@@ -85,7 +85,7 @@ const TrustForex = () => {
 
 
         <div className="relative lg:p-3 lg:flex-1">
-          <Image src={securedMoney} alt="bitmap" className="rounded-[20px] w-full object-cover overflow-hidden object-center" />
+          <Image src={securedMoney} alt="bitmap" className="rounded-[20px] w-full object-cover overflow-hidden object-center" quality={100}/>
           <div className="absolute left-1/2 -translate-x-1/2 bottom-[5%] lg:bottom-[7%] w-[95%] lg:w-[85%] mx-auto">
             <div className="flex flex-col gap-3 lg:gap-4  ">
               {benefits?.slice?.(2, 4).map((item, index) => (

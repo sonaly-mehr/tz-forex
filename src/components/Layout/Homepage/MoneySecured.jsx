@@ -77,6 +77,7 @@ const MoneySecured = () => {
                     src={item?.icon}
                     alt=""
                     className=" w-[20px] h-[20px] "
+                    quality={100}
                   />
                 </div>
                 <h4 className="font-matter-regular text-[#0D0A08] font-normal text-base lg:text-xl">
@@ -89,7 +90,7 @@ const MoneySecured = () => {
       </div>
 
       <div className="lg:flex-1 mt-2 lg:mt-0">
-        <Image src={SendMoney} alt="" className="w-full h-auto" />
+        <Image src={SendMoney} alt="" className="w-full h-auto" quality={100}/>
       </div>
     </motion.div>
   );

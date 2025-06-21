@@ -43,10 +43,10 @@ const Banks = () => {
       </div>
 
       <div className="hidden lg:block w-full">
-        <Image src={banks} alt="" className="h-auto w-full rounded-[20px] overflow-hidden" />
+        <Image src={banks} alt="" className="h-auto w-full rounded-[20px] overflow-hidden" quality={100}/>
       </div>
       <div className="block lg:hidden mt-4 w-full">
-        <Image src={banksMobile} alt="" className="w-full h-auto" />
+        <Image src={banksMobile} alt="" className="w-full h-auto" quality={100}/>
       </div>
     </motion.div>
   );
