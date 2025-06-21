@@ -1,14 +1,14 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import CurrencyFlag from 'react-currency-flags';
-import Select from 'react-select';
 import Image from 'next/image';
 import { IoIosArrowDown, IoIosArrowForward } from 'react-icons/io';
-import { LiaExchangeAltSolid } from 'react-icons/lia';
-// import cad from '@/public/cad.svg';
-// import inr from '@/public/inr.svg';
+import { LiaExchangeAltSolid } from 'react-icons/lia';;
 import totalFee from '../../../public/img/icons/total-fee.svg';
 import Button from './Button';
+import dynamic from 'next/dynamic'
+
+const NoSSRSelect = dynamic(() => import('react-select'), { ssr: false })
 
 const Calculator = () => {
   const API_KEY = "cur_live_J7nMmu9sTuSG8QLkh7fY1PEL8UnE8331PtS3qcpx";
@@ -232,7 +232,7 @@ const Calculator = () => {
           </div>
 
           <div className="flex items-center space-x-1 lg:space-x-2  justify-end cursor-pointer">
-            <Select
+            <NoSSRSelect
             classNamePrefix="currency-select"
               options={currencyOptions}
               value={sendCurrency}
@@ -275,7 +275,7 @@ const Calculator = () => {
             </div>
 
             <div className="flex items-center space-x-1 lg:space-x-2 justify-end ">
-              <Select
+              <NoSSRSelect
                classNamePrefix="currency-select"
                 options={currencyOptions}
                 value={receiveCurrency}

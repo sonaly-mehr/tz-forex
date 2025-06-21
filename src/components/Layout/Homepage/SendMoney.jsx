@@ -1,14 +1,7 @@
 "use client";
-import Image from "next/image";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import sendMoney from "../../../../public/img/send-money.jpg";
-import Button from "@/components/Ui/Button";
-import cad from "../../../../public/img/icons/CAD.svg";
-import inr from "../../../../public/img/icons/INR.svg";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
-import { LiaExchangeAltSolid } from "react-icons/lia";
-import totalFee from "../../../../public/img/icons/total-fee.svg";
 import { fadeIn, staggerContainer } from "../../../../utils/Motion";
 import { motion } from "framer-motion";
 import Calculator from "../../Ui/Calculator";
