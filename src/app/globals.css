@@ -148,3 +148,10 @@ html {
 .currency-select__dropdown-indicator {
   cursor: pointer !important;
 }
+
+@media screen and (max-width: 768px) {
+  .currency-select__value-container {
+    padding: 0 !important;
+    padding-right: 4px !important;
+  }
+}
