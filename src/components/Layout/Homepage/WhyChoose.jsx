@@ -147,7 +147,7 @@ useEffect(() => {
                 </button>
                 <FaArrowRight className="text-[#0006B1] text-xl" />
                 <button className="font-openSans text-dark font-normal text-xl bg-white lg:bg-[#F7F8FA] rounded-lg border border-solid border-[#EDEFF2] py-2.5 px-7">
-                  €1367
+                  1367₹
                 </button>
               </div>
 

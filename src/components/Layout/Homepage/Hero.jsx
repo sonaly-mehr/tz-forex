@@ -1,7 +1,7 @@
 "use client";
 import Button from "@/components/Ui/Button";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   fadeIn,
@@ -14,6 +14,13 @@ import user1 from "../../../../public/img/user1.png";
 import user2 from "../../../../public/img/user2.png";
 import user3 from "../../../../public/img/user3.png";
 import user4 from "../../../../public/img/user4.jpg";
+
+const mobileOrderClasses = [
+  "order-4 lg:order-none", // First image (index0) becomes last
+  "order-2 lg:order-none", // Second image maintains position
+  "order-3 lg:order-none", // Third image maintains position
+  "order-1 lg:order-none", // Last image (index3) becomes first
+];
 
 const rateInfo = [
   {
@@ -37,6 +44,36 @@ const rateInfo = [
 ];
 
 const Hero = () => {
+    const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const images = [user1, user2, user3, user4];
+  
+  // For mobile: reverse the order [last, ..., first]
+  const mobileOrder = [3, 2, 1, 0];
+  const mobileImages = mobileOrder.map(index => images[index]);
+  
+  // Auto slide every 3 seconds
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % images.length);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, [isPaused, images.length]);
+  
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+  
+  const nextSlide = () => {
+    setCurrentSlide(prev => (prev + 1) % images.length);
+  };
+  
+  const prevSlide = () => {
+    setCurrentSlide(prev => (prev - 1 + images.length) % images.length);
+  };
   return (
     <motion.div
       variants={staggerContainer}
@@ -115,47 +152,51 @@ const Hero = () => {
           </div>
         </div>
       </div>
- <div
-        className="
-          absolute -bottom-[6%] lg:-bottom-[20%]
-          left-1/2 -translate-x-1/2
-          w-full lg:w-[90%] mx-auto px-4 lg:px-0
-        "
-      >
-        {/* 
-          Use flex + overflow-x-auto on mobile,
-          switch back to grid-cols-4 on lg+
-        */}
-        <div
-          className="
-            flex lg:grid lg:grid-cols-4 gap-2 lg:gap-7
-            overflow-x-auto lg:overflow-hidden
-            snap-x snap-mandatory
-              
-            px-4     hide-scrollbar    
-          "
-        >
-          {[user1, user2, user3, user4].map((src, index) => (
+ <div className="absolute -bottom-[6%] lg:-bottom-[20%] left-1/2 -translate-x-1/2 w-full lg:w-[90%] mx-auto px-4 lg:px-0">
+        {/* Desktop Grid (original order) */}
+        <div className="hidden lg:grid grid-cols-4 gap-7">
+          {images?.map((src, index) => (
             <motion.div
               key={index}
               initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={fadeIn("right", "spring", index * 0.3, 0.75)}
-              className="
-                flex-shrink-0 w-[235px] lg:w-auto
-                snap-start
-                border-b border-[#CDCCDB] pb-7
-                mx-2 lg:mx-0        /* spacing in scroll mode */
-              "
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeIn("right", "spring", index * 0.3, 0.75)}
+              className="border-b border-[#CDCCDB] pb-7"
             >
               <Image
                 src={src}
                 alt=""
-                className="rounded-xl object-cover object-center h-[280px] md:h-[370px] w-full"
+                className="rounded-xl object-cover object-center h-[370px] w-full"
               />
             </motion.div>
           ))}
+        </div>
+        
+        {/* Mobile Carousel (reversed order) */}
+        <div 
+          className="lg:hidden relative overflow-hidden rounded-xl h-[280px]"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
+          {/* Carousel container */}
+          <div className="flex w-full transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
+            {mobileImages.map((src, index) => (
+              <div key={index} className="min-w-[90%]  h-[370px] pr-5 ">
+                <Image
+                  src={src}
+                  alt={`User ${index + 1}`}
+                  className="rounded-xl object-cover object-center h-[370px] w-full"
+                  // layout="responsive"
+                />
+              </div>
+            ))}
+          </div>
+          
         </div>
       </div>
     </motion.div>

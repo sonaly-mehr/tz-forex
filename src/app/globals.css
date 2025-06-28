@@ -58,7 +58,8 @@
   }
 }
 
-html, body {
+html,
+body {
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -118,7 +119,7 @@ html {
   .font-gilroy-light {
     font-family: "gilroy-light";
   }
-    .font-gilroy-light {
+  .font-gilroy-light {
     font-family: "gilroy-light";
   }
   .font-gilroy-medium {
@@ -137,8 +138,8 @@ html {
 
 /* For IE, Edge and Firefox */
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .mobile-scroll-wrapper {
   overflow-x: auto !important;
@@ -154,4 +155,18 @@ html {
     padding: 0 !important;
     padding-right: 4px !important;
   }
+}
+
+.slick-slide {
+  transition: transform 0.5s ease;
+}
+
+.slick-center {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+.slick-list {
+  padding: 10px 0 !important;
 }

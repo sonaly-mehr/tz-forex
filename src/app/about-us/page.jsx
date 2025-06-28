@@ -5,7 +5,7 @@ import bgEffect from "../../../public/img/BG.png";
 import aboutBg from "../../../public/img/about-bg.jpg";
 import { RxCross2 } from "react-icons/rx";
 import whytzforex from "../../../public/img/why-tzforex.svg";
-import phone from "../../../public/img/phone.svg";
+import phone from "../../../public/img/money-transfer.png";
 import { GiCheckMark } from "react-icons/gi";
 import { FaCheckCircle } from "react-icons/fa";
 import Button from "@/components/Ui/Button";
@@ -181,7 +181,7 @@ const page = () => {
       {/*Money transfer*/}
       <div className="bg-[#F9FBFE] py-6 lg:py-10">
         <div className="flex flex-col lg:flex-row layout-container gap-4 lg:gap-20 justify-between items-center">
-          <div className="lg:basis-[60%] order-2  lg:order-1">
+          <div className="lg:basis-[60%] order-2  lg:order-1 ">
             <h2 className="font-aeonik-pro text-dark tracking-[-1.5%] lg:leading-[80px] text-3xl lg:text-[70px]">
               Making Money Transfers Fair & Simple
             </h2>
@@ -203,7 +203,7 @@ const page = () => {
             </ul>
           </div>
 
-          <div className="order-1  lg:order-2">
+          <div className="order-1  lg:order-2 flex-1">
             <Image src={phone} alt="" className="h-[300px] lg:h-auto" quality={100}/>
           </div>
         </div>
